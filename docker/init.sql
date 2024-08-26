@@ -1,0 +1,10 @@
+CREATE TABLE demos (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE frames (
+    id SERIAL PRIMARY KEY,
+    demo_id INTEGER REFERENCES demos(id) ON DELETE CASCADE,
+    frame_html TEXT NOT NULL
+);
